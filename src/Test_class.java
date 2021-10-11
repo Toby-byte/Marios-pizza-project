@@ -1,5 +1,6 @@
 public class Test_class {
     public static void main(String[] args) {
-        System.out.println("this is a test");
+        Orders asd = new Orders(1,69,"visuvio");
+        System.out.println(asd);
     }
 }
