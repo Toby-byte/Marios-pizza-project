@@ -38,7 +38,7 @@ public class Orders {
                 ", costumerName='" + costumerName + '\'' +
                 ", pizzaIdArray=" + Arrays.toString(pizzaIdArray) +
                 ", timeStamp='" + timeStamp + '\'' +
-                ", orderStatus=" + orderStatus +
+                ", orderStatusg=" + orderStatus +
                 '}';
     }
 }
