@@ -7,6 +7,7 @@ public class Orders {
     private String costumerName;
     private String[] pizzaNameArray;
     private String timeStamp;
+    private String deliveryTime;
     private boolean orderStatus;
 
     public String pizzaTimestamp() {
@@ -18,11 +19,12 @@ public class Orders {
         return timeStamp;
     }
 
-    public Orders(int orderId, String costumerName, String[] pizzaNameArray, String timeStamp, boolean orderStatus) {
+    public Orders(int orderId, String costumerName, String[] pizzaNameArray, String timeStamp, String deliveryTime, boolean orderStatus) {
         this.orderId = orderId;
         this.costumerName = costumerName;
         this.pizzaNameArray = pizzaNameArray;
         this.timeStamp = timeStamp;
+        this.deliveryTime = deliveryTime;
         this.orderStatus = orderStatus;
     }
 
@@ -48,8 +50,9 @@ public class Orders {
         return "Orders{" +
                 "orderId=" + orderId +
                 ", costumerName='" + costumerName + '\'' +
-                ", pizzaIdArray=" + Arrays.toString(pizzaNameArray) +
+                ", pizzaNameArray=" + Arrays.toString(pizzaNameArray) +
                 ", timeStamp='" + timeStamp + '\'' +
+                ", deliveryTime='" + deliveryTime + '\'' +
                 ", orderStatus=" + orderStatus +
                 '}';
     }
