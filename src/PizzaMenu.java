@@ -1,5 +1,5 @@
 public class PizzaMenu {
-    private static String name;
+    private String name;
     private String topping1;
     private String topping2;
     private String topping3;
@@ -11,5 +11,20 @@ public class PizzaMenu {
         this.topping2 = topping2;
         this.topping3 = topping3;
         this.topping4 = topping4;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String toString() {
+        return "PizzaMenu{" +
+                "name='" + name + '\'' +
+                ", topping1='" + topping1 + '\'' +
+                ", topping2='" + topping2 + '\'' +
+                ", topping3='" + topping3 + '\'' +
+                ", topping4='" + topping4 + '\'' +
+                '}';
     }
 }
