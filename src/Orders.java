@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Orders {
     private int orderId;
     private String costumerName;
-    private String[] pizzaNameArray;
+    private String[] arrayOfOrderedPizza;
     private String timeStamp;
     private String deliveryTime;
     private boolean orderStatus;
@@ -19,10 +19,10 @@ public class Orders {
         return timeStamp;
     }
 
-    public Orders(int orderId, String costumerName, String[] pizzaNameArray, String timeStamp, String deliveryTime, boolean orderStatus) {
+    public Orders(int orderId, String costumerName, String[] arrayOfOrderedPizza, String timeStamp, String deliveryTime, boolean orderStatus) {
         this.orderId = orderId;
         this.costumerName = costumerName;
-        this.pizzaNameArray = pizzaNameArray;
+        this.arrayOfOrderedPizza = arrayOfOrderedPizza;
         this.timeStamp = timeStamp;
         this.deliveryTime = deliveryTime;
         this.orderStatus = orderStatus;
@@ -37,7 +37,7 @@ public class Orders {
     }
 
     public String[] getPizzaNameArray() {
-        return pizzaNameArray;
+        return arrayOfOrderedPizza;
     }
 
     public void setOrderStatusToUnactive(boolean orderStatus) {
@@ -50,7 +50,7 @@ public class Orders {
         return "Orders{" +
                 "orderId=" + orderId +
                 ", costumerName='" + costumerName + '\'' +
-                ", pizzaNameArray=" + Arrays.toString(pizzaNameArray) +
+                ", arrayOfOrderedPizza=" + Arrays.toString(arrayOfOrderedPizza) +
                 ", timeStamp='" + timeStamp + '\'' +
                 ", deliveryTime='" + deliveryTime + '\'' +
                 ", orderStatus=" + orderStatus +
