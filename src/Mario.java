@@ -10,7 +10,5 @@ public class Mario {
         for (int i = 0; i < 4; i++) {
             System.out.println(pizzas[i]);
         }
-
-        //bla bla bla
     }
 }
