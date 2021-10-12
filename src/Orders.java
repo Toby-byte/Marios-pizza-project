@@ -10,15 +10,6 @@ public class Orders {
     private String deliveryTime;
     private boolean orderStatus;
 
-    public String pizzaTimestamp() {
-        String timeStamp;
-        //https://www.javatpoint.com/java-get-current-date
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-        LocalDateTime now = LocalDateTime.now();
-        timeStamp = dtf.format(now);
-        return timeStamp;
-    }
-
     public Orders(int orderId, String costumerName, PizzaMenu[] arrayOfOrderedPizza, String timeStamp, String deliveryTime, boolean orderStatus) {
         this.orderId = orderId;
         this.costumerName = costumerName;
@@ -30,6 +21,12 @@ public class Orders {
 
     public int getOrderId() {
         return orderId;
+    }
+
+    public int newestOrderId(int lastOrderId){
+        int newestOrderId = lastOrderId;
+        newestOrderId++;
+        return newestOrderId;
     }
 
     public String getCostumerName() {
