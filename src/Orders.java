@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Orders {
     private int orderId;
     private String costumerName;
-    private String[] arrayOfOrderedPizza;
+    private PizzaMenu[] arrayOfOrderedPizza;
     private String timeStamp;
     private String deliveryTime;
     private boolean orderStatus;
@@ -19,7 +19,7 @@ public class Orders {
         return timeStamp;
     }
 
-    public Orders(int orderId, String costumerName, String[] arrayOfOrderedPizza, String timeStamp, String deliveryTime, boolean orderStatus) {
+    public Orders(int orderId, String costumerName, PizzaMenu[] arrayOfOrderedPizza, String timeStamp, String deliveryTime, boolean orderStatus) {
         this.orderId = orderId;
         this.costumerName = costumerName;
         this.arrayOfOrderedPizza = arrayOfOrderedPizza;
@@ -36,7 +36,7 @@ public class Orders {
         return costumerName;
     }
 
-    public String[] getPizzaNameArray() {
+    public PizzaMenu[] getPizzaNameArray() {
         return arrayOfOrderedPizza;
     }
 
