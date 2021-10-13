@@ -1,32 +1,18 @@
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 
 public class Orders {
-    private int orderId;
     private String costumerName;
     private PizzaMenu[] arrayOfOrderedPizza;
     private String timeStamp;
     private String deliveryTime;
     private boolean orderStatus;
 
-    public Orders(int orderId, String costumerName, PizzaMenu[] arrayOfOrderedPizza, String timeStamp, String deliveryTime, boolean orderStatus) {
-        this.orderId = orderId;
+    public Orders(String costumerName, PizzaMenu[] arrayOfOrderedPizza, String timeStamp, String deliveryTime, boolean orderStatus) {
         this.costumerName = costumerName;
         this.arrayOfOrderedPizza = arrayOfOrderedPizza;
         this.timeStamp = timeStamp;
         this.deliveryTime = deliveryTime;
         this.orderStatus = orderStatus;
-    }
-
-    public int getOrderId() {
-        return orderId;
-    }
-
-    public int newestOrderId(int lastOrderId){
-        int newestOrderId = lastOrderId;
-        newestOrderId++;
-        return newestOrderId;
     }
 
     public String getCostumerName() {
@@ -45,7 +31,6 @@ public class Orders {
     @Override
     public String toString() {
         return "Orders{" +
-                "orderId=" + orderId +
                 ", costumerName='" + costumerName + '\'' +
                 ", arrayOfOrderedPizza=" + Arrays.toString(arrayOfOrderedPizza) +
                 ", timeStamp='" + timeStamp + '\'' +
