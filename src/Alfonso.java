@@ -23,7 +23,7 @@ public class Alfonso{
 
     public Orders createOrder(int orderID, String customerName, PizzaMenu[] arrayOfOrderedPizza, String timeOfOrder, String deliveryTime, boolean orderStatus){
         this.orderID++;
-        return new Orders(orderID, customerName, arrayOfOrderedPizza, timeOfOrder, deliveryTime, orderStatus);
+        return new Orders(customerName, arrayOfOrderedPizza, timeOfOrder, deliveryTime, orderStatus);
     }
 
     public void removeOrder(boolean orderStatus){
