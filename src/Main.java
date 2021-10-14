@@ -131,7 +131,7 @@ public class Main {
         System.out.println("What order do you want removed?");
         orderToRemove = scan.nextInt()-1;//minus med en for at komme på indexets plads
         scan.nextLine();
-        ordersForMario.get(orderToRemove).setOrderStatusToInactive(); // Kodet af jimmy
+        ordersForMario.get(orderToRemove).setOrderStatusToDelivered(); // Kodet af jimmy
         System.out.println("Order has been removed");
     }
 

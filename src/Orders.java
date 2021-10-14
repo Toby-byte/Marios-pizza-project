@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.ArrayList;
 
 public class Orders {
@@ -18,26 +17,8 @@ public class Orders {
         this.orderStatus = orderStatus;
     }
 
-    public int getOrderId() {
-        return orderId;
-    }
 
-    public int newestOrderId(int lastOrderId){
-        int newestOrderId = lastOrderId;
-        newestOrderId++;
-        return newestOrderId;
-    }
-
-    public String getCostumerName() {
-        return costumerName;
-    }
-
-    public ArrayList getPizzaNameArray() {
-        return arrayOfOrderedPizza;
-    }
-
-    public void setOrderStatusToInactive() {
-        this.orderStatus = orderStatus;
+    public void setOrderStatusToDelivered() {
         orderStatus = false;
     }
 
