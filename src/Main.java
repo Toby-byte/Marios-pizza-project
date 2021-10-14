@@ -1,6 +1,5 @@
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import javax.xml.crypto.Data;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -9,6 +8,7 @@ public class Main {
     private static String userInput = "";
     private static Scanner scan = new Scanner(System.in);
     private static int idOfOrder = 0;
+    private static ArrayList<Orders> deliveredPizzaOrders = new ArrayList<>();
     private static ArrayList<Orders> ordersForMario = new ArrayList();
     //Pizza objects
     private static PizzaMenu p1 = new PizzaMenu(1,"Vesuvio","tomato","cheese","skinke","oregano");
@@ -46,7 +46,7 @@ public class Main {
     public static void marioMenu(){
         System.out.println("\t=MARIO MENU=");
         do{
-            System.out.println("_____________________\n1.\t Check Menu\n"+"2.\t Check Orders\n"+"3.\t Log off");
+            System.out.println("_____________________\n1.\t Check Menu\n"+"2.\t Check Orders\n"+"3. \t Check statistics\n"+"4.\t Log off");
             userInput = scan.nextLine();
             switch(userInput){
                 case "1":
@@ -56,6 +56,9 @@ public class Main {
                     System.out.println(ordersForMario);
                     break;
                 case "3":
+                    printOrdersForMario();
+                    break;
+                case "4":
                     initializer();
                     continueLoop = false;
                     break;
@@ -133,6 +136,8 @@ public class Main {
         orderToRemove = scan.nextInt()-1;//minus med en for at komme på indexets plads
         scan.nextLine();
         ordersForMario.get(orderToRemove).setOrderStatusToDelivered(); // Kodet af jimmy
+        deliveredPizzaOrders.add(ordersForMario.get(orderToRemove)); // kodet af tobias
+        ordersForMario.remove(orderToRemove);
         System.out.println("Order has been removed");
     }
 
@@ -147,6 +152,14 @@ public class Main {
         return timeStamp;
     }
     // Sammen arbejde slut
+
+
+    public static void printOrdersForMario() { // kode af Tobias
+        for (int i = 0; i < deliveredPizzaOrders.size(); i++) {
+            System.out.println(deliveredPizzaOrders.get(i));
+
+        }
+    }
 
 
     public static void main(String[] args) {

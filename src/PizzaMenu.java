@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class PizzaMenu {
+public class PizzaMenu { // kode af Tobias start
     private Scanner scan = new Scanner(System.in);
     private String name;
     private String topping1;
@@ -17,7 +17,7 @@ public class PizzaMenu {
         this.topping2 = topping2;
         this.topping3 = topping3;
         this.topping4 = topping4;
-    }
+    } // // kode af Tobias slut
 
     /*private PizzaMenu p1 = new PizzaMenu(1,"Vesuvio","tomato","cheese","skinke","oregano");
     private PizzaMenu p2 = new PizzaMenu(2,"Amerikaner","tomato","cheese", "oksefars","oregano");
