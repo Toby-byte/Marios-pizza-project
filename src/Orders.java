@@ -36,7 +36,7 @@ public class Orders {
         return arrayOfOrderedPizza;
     }
 
-    public void setOrderStatusToUnactive(boolean orderStatus) {
+    public void setOrderStatusToInactive() {
         this.orderStatus = orderStatus;
         orderStatus = false;
     }
@@ -53,14 +53,4 @@ public class Orders {
                 ')';
     }
 
-    /*
-    boolean loopForTheEntireShift = true;
-        List<Orders> orders = new ArrayList<>();
-        int i = 0;
-        do{
-            i++;
-            orders.add(new Orders(i,"Kim", testarray, "nu", "nu", true));
-        }
-        while(!loopForTheEntireShift);
-     */
 }

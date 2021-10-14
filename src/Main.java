@@ -1,3 +1,5 @@
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -73,6 +75,7 @@ public class Main {
                     createNewOrder();
                     break;
                 case "2":
+                    System.out.println(ordersForMario);
                     removeOrder();
                     break;
                 case "3":
@@ -117,7 +120,7 @@ public class Main {
         }
         scan.nextLine();
         idOfOrder++;
-        Orders customerOrder = new Orders(idOfOrder,nameOfCustomer,chosenPizzaArray,"10","10",true);
+        Orders customerOrder = new Orders(idOfOrder,nameOfCustomer,chosenPizzaArray,pizzaTimestamp(),"10",true);
         addOrdersForMario(customerOrder);
     }
 
@@ -128,9 +131,21 @@ public class Main {
         System.out.println("What order do you want removed?");
         orderToRemove = scan.nextInt()-1;//minus med en for at komme på indexets plads
         scan.nextLine();
-        ordersForMario.remove(orderToRemove);
+        ordersForMario.get(orderToRemove).setOrderStatusToInactive(); // Kodet af jimmy
         System.out.println("Order has been removed");
     }
+
+    // Sammen arbejde mellem Tobias og Jimmy
+    public static String pizzaTimestamp() {
+        String timeStamp;
+        //https://www.javatpoint.com/java-get-current-date
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+        System.out.println(dtf.format(now));
+        timeStamp = dtf.format(now);
+        return timeStamp;
+    }
+    // Sammen arbejde slut
 
 
     public static void main(String[] args) {
