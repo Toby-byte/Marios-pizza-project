@@ -1,10 +1,12 @@
+import java.util.ArrayList;
+
 public class Alfonso{
 
     public Orders createOrder;
     //variables
     private int orderID;
     private String customerName;
-    private PizzaMenu[] arrayOfOrderedPizza;
+    private ArrayList arrayOfOrderedPizza;
     private String timeOfOrder;
     private String deliveryTime;
     private boolean orderStatus;
@@ -21,9 +23,9 @@ public class Alfonso{
     }*/
 
 
-    public Orders createOrder(int orderID, String customerName, PizzaMenu[] arrayOfOrderedPizza, String timeOfOrder, String deliveryTime, boolean orderStatus){
+    public Orders createOrder(int orderID, String customerName, ArrayList arrayOfOrderedPizza, String timeOfOrder, String deliveryTime, boolean orderStatus){
         this.orderID++;
-        return new Orders(customerName, arrayOfOrderedPizza, timeOfOrder, deliveryTime, orderStatus);
+        return new Orders(orderID,customerName, arrayOfOrderedPizza, timeOfOrder, deliveryTime, orderStatus);
     }
 
     public void removeOrder(boolean orderStatus){

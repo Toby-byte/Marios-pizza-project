@@ -1,14 +1,15 @@
 import java.util.Arrays;
+import java.util.ArrayList;
 
 public class Orders {
     private int orderId;
     private String costumerName;
-    private PizzaMenu[] arrayOfOrderedPizza;
+    private ArrayList arrayOfOrderedPizza;
     private String timeStamp;
     private String deliveryTime;
     private boolean orderStatus;
 
-    public Orders(int orderId, String costumerName, PizzaMenu[] arrayOfOrderedPizza, String timeStamp, String deliveryTime, boolean orderStatus) {
+    public Orders(int orderId, String costumerName, ArrayList arrayOfOrderedPizza, String timeStamp, String deliveryTime, boolean orderStatus) {
         this.orderId = orderId;
         this.costumerName = costumerName;
         this.arrayOfOrderedPizza = arrayOfOrderedPizza;
@@ -31,7 +32,7 @@ public class Orders {
         return costumerName;
     }
 
-    public PizzaMenu[] getPizzaNameArray() {
+    public ArrayList getPizzaNameArray() {
         return arrayOfOrderedPizza;
     }
 
@@ -42,14 +43,14 @@ public class Orders {
 
     @Override
     public String toString() {
-        return "Orders{" +
-                "orderId=" + orderId +
-                ", costumerName='" + costumerName + '\'' +
-                ", arrayOfOrderedPizza=" + Arrays.toString(arrayOfOrderedPizza) +
-                ", timeStamp='" + timeStamp + '\'' +
-                ", deliveryTime='" + deliveryTime + '\'' +
-                ", orderStatus=" + orderStatus +
-                '}';
+        return "[NEWORDER]: (" +
+                "orderId = " + orderId + ')'+
+                "\nName: \"" + costumerName + '\"' +
+                "\nOrdered pizzas: " + arrayOfOrderedPizza +
+                "\nTime of order: '" + timeStamp + '\'' +
+                ", Expected pickup: '" + deliveryTime + '\'' +
+                "\nOrder Status: " + orderStatus +
+                ')';
     }
 
     /*
