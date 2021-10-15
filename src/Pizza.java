@@ -1,15 +1,14 @@
 import java.util.Scanner;
 
-public class PizzaMenu { // kode af Tobias start
+public class Pizza { // kode af Tobias start
     private String name;
     private String topping1;
     private String topping2;
     private String topping3;
     private String topping4;
-
     private int pizzaNumber;
 
-    public PizzaMenu(int pizzaNumber, String name, String topping1, String topping2, String topping3, String topping4) {
+    public Pizza(int pizzaNumber, String name, String topping1, String topping2, String topping3, String topping4) {
         this.pizzaNumber = pizzaNumber;
         this.name = name;
         this.topping1 = topping1;
