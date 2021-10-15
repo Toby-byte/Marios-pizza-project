@@ -1,3 +1,4 @@
+// Theis start
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -124,7 +125,7 @@ public class Main {
         }
         scan.nextLine();
         idOfOrder++;
-        Orders customerOrder = new Orders(idOfOrder,nameOfCustomer,chosenPizzaArray,pizzaTimestamp(),"10",true);
+        Orders customerOrder = new Orders(idOfOrder,nameOfCustomer,chosenPizzaArray,pizzaTimestamp(),"10");
         addOrdersForMario(customerOrder);
     }
 
@@ -135,7 +136,6 @@ public class Main {
         System.out.println("What order do you want removed?");
         orderToRemove = scan.nextInt()-1;//minus med en for at komme på indexets plads
         scan.nextLine();
-        ordersForMario.get(orderToRemove).setOrderStatusToDelivered(); // Kodet af jimmy
         deliveredPizzaOrders.add(ordersForMario.get(orderToRemove)); // kodet af tobias
         ordersForMario.remove(orderToRemove);
         System.out.println("Order has been removed");
@@ -164,12 +164,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-
         initializer();
-
-        System.out.println(ordersForMario);
-
 
     }
 
 }
+
+// Theis Slut

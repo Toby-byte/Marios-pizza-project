@@ -1,3 +1,4 @@
+// Jimmy start
 import java.util.ArrayList;
 
 public class Orders {
@@ -6,23 +7,17 @@ public class Orders {
     private ArrayList arrayOfOrderedPizza;
     private String timeStamp;
     private String deliveryTime;
-    private boolean orderStatus;
 
-    public Orders(int orderId, String costumerName, ArrayList arrayOfOrderedPizza, String timeStamp, String deliveryTime, boolean orderStatus) {
+    public Orders(int orderId, String costumerName, ArrayList arrayOfOrderedPizza, String timeStamp, String deliveryTime) {
         this.orderId = orderId;
         this.costumerName = costumerName;
         this.arrayOfOrderedPizza = arrayOfOrderedPizza;
         this.timeStamp = timeStamp;
         this.deliveryTime = deliveryTime;
-        this.orderStatus = orderStatus;
     }
 
 
-    public void setOrderStatusToDelivered() {
-        orderStatus = false;
-
-    }
-
+    // Theis
     @Override
     public String toString() {
         return "[NEWORDER]: (" +
@@ -31,8 +26,7 @@ public class Orders {
                 "\nOrdered pizzas: " + arrayOfOrderedPizza +
                 "\nTime of order: '" + timeStamp + '\'' +
                 ", Expected pickup: '" + deliveryTime + '\'' +
-                "\nOrder Status: " + orderStatus +
                 ')';
     }
-
 }
+// Jimmy SLut
