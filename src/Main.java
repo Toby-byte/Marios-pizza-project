@@ -9,14 +9,16 @@ public class Main {
     private static String userInput = "";
     private static Scanner scan = new Scanner(System.in);
     private static int idOfOrder = 0;
-    private static ArrayList<Orders> deliveredPizzaOrders = new ArrayList<>();
+    private static ArrayList<Orders> deliveredPizzaOrders = new ArrayList<>(); // Kodet af Tobias
     private static ArrayList<Orders> ordersForMario = new ArrayList();
     //Pizza objects
+    //Tobias start
     private static PizzaMenu p1 = new PizzaMenu(1,"Vesuvio","tomato","cheese","skinke","oregano");
     private static PizzaMenu p2 = new PizzaMenu(2,"Amerikaner","tomato","cheese", "oksefars","oregano");
     private static PizzaMenu p3 = new PizzaMenu(3,"Cacciatore","tomato","cheese", "pepperoni","oregano");
     private static PizzaMenu p4 = new PizzaMenu(4,"Bertil","tomato","cheese", "bacon","oregano");
     private static PizzaMenu[] arrayOfPizzas = {p1,p2,p3,p4};
+    //Tobias slut
 
 
 
@@ -57,7 +59,7 @@ public class Main {
                     System.out.println(ordersForMario);
                     break;
                 case "3":
-                    printOrdersForMario();
+                    printOrdersForMario(); // Kodet af Tobias
                     break;
                 case "4":
                     initializer();
