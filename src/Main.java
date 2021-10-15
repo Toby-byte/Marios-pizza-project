@@ -13,11 +13,11 @@ public class Main {
     private static ArrayList<Orders> ordersForMario = new ArrayList();
     //Pizza objects
     //Tobias start
-    private static PizzaMenu p1 = new PizzaMenu(1,"Vesuvio","tomato","cheese","skinke","oregano");
-    private static PizzaMenu p2 = new PizzaMenu(2,"Amerikaner","tomato","cheese", "oksefars","oregano");
-    private static PizzaMenu p3 = new PizzaMenu(3,"Cacciatore","tomato","cheese", "pepperoni","oregano");
-    private static PizzaMenu p4 = new PizzaMenu(4,"Bertil","tomato","cheese", "bacon","oregano");
-    private static PizzaMenu[] arrayOfPizzas = {p1,p2,p3,p4};
+    private static Pizza p1 = new Pizza(1,"Vesuvio","tomato","cheese","skinke","oregano");
+    private static Pizza p2 = new Pizza(2,"Amerikaner","tomato","cheese", "oksefars","oregano");
+    private static Pizza p3 = new Pizza(3,"Cacciatore","tomato","cheese", "pepperoni","oregano");
+    private static Pizza p4 = new Pizza(4,"Bertil","tomato","cheese", "bacon","oregano");
+    private static Pizza[] arrayOfPizzas = {p1,p2,p3,p4};
     //Tobias slut
 
 
@@ -114,14 +114,14 @@ public class Main {
         System.out.println("Choose amount of pizzas: ");
         int amountOfPizzas = scan.nextInt();
 
-        ArrayList<PizzaMenu> chosenPizzaArray = new ArrayList();
+        ArrayList<Pizza> chosenPizzaArray = new ArrayList();
 
         System.out.println("What pizza(s) would the costumer like? ");
         //printing out menu
         menuPrinter();
         //loop to choose pizzas
         for (int i = 1; i <= amountOfPizzas; i++) {
-            PizzaMenu chosenPizza = arrayOfPizzas[scan.nextInt()-1];
+            Pizza chosenPizza = arrayOfPizzas[scan.nextInt()-1];
             chosenPizzaArray.add(chosenPizza);
             System.out.println("You've chosen: "+chosenPizza);
         }
