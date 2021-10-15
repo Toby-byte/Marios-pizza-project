@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
+    //Variables
     private static boolean continueLoop = true;
     private static String userInput = "";
     private static Scanner scan = new Scanner(System.in);
@@ -21,13 +22,13 @@ public class Main {
     //Tobias slut
 
 
-
+    // Første menu der bliver kaldt(En slags "main menu"
     public static void initializer(){
         System.out.println("\t=PIZZABIKS=\n" +
                 "_____________________\n" +
                 "Who is operating the machine?");
         System.out.println("1.\t Mario\n"+"2.\t Alfonso\n"+"3.\t Quit");
-
+        // do while med switch for at tjekke for det rigtige input
         do{
             userInput = scan.nextLine();
             switch(userInput){
@@ -46,8 +47,10 @@ public class Main {
         }while(continueLoop);
     }
 
+    // Menu for Mario
     public static void marioMenu(){
         System.out.println("\t=MARIO MENU=");
+        // do while med switch for at tjekke for det rigtige input
         do{
             System.out.println("_____________________\n1.\t Check Menu\n"+"2.\t Check Orders\n"+"3. \t Check statistics\n"+"4.\t Log off");
             userInput = scan.nextLine();
@@ -56,7 +59,7 @@ public class Main {
                     menuPrinter();
                     break;
                 case "2":
-                    System.out.println(ordersForMario);
+                    System.out.println(ordersForMario); // souter vores arrayliste af ordre
                     break;
                 case "3":
                     printOrdersForMario(); // Kodet af Tobias
@@ -72,8 +75,10 @@ public class Main {
         }while(continueLoop);
     }
 
+    // Menu for Alfonso
     public static void alfonsoMenu(){
         System.out.println("\t=ALFONSO MENU=");
+        // do while med switch for at tjekke for det rigtige input
         do{
             System.out.println("_____________________\n1.\t New order\n"+"2.\t Remove order\n"+"3.\t Log off");
             userInput = scan.nextLine();
@@ -95,14 +100,14 @@ public class Main {
 
         }while(continueLoop);
     }
-
+    // Printer en liste over pizzaer(brugt i marioMenu())
     public static void menuPrinter(){
         System.out.println("\t==MENU==");
         for (int i = 0; i < arrayOfPizzas.length; i++) {
             System.out.println(arrayOfPizzas[i]);
         }
     }
-
+    // tilføjer ordre til vores ArrayList(brugt i createNewOrder())
     public static void addOrdersForMario(Orders orderToAdd){
         ordersForMario.add(orderToAdd);
     }
@@ -125,21 +130,22 @@ public class Main {
             chosenPizzaArray.add(chosenPizza);
             System.out.println("You've chosen: "+chosenPizza);
         }
-        scan.nextLine();
-        idOfOrder++;
+        scan.nextLine(); //brugt fordi vi lige har brugt "scan.nextInt()"
+        idOfOrder++; // incrementer vores int idOfOrder med én for at give ny ordre et nyt id hver gang
         Orders customerOrder = new Orders(idOfOrder,nameOfCustomer,chosenPizzaArray,pizzaTimestamp(),"10");
         addOrdersForMario(customerOrder);
     }
-
+        // Der kan forekomme et problem med denne metode, da IDet på Orders objectet ikke kommer til at stemme
+        // overens med indexets plads på vores ArrayList.
     public static void removeOrder(){
         int orderToRemove;
         System.out.println("==ORDER REMOVAL==\n" +
                 "_____________");
         System.out.println("What order do you want removed?");
-        orderToRemove = scan.nextInt()-1;//minus med en for at komme på indexets plads
+        orderToRemove = scan.nextInt()-1;//minus med én for at komme på indexets plads
         scan.nextLine();
         deliveredPizzaOrders.add(ordersForMario.get(orderToRemove)); // kodet af tobias
-        ordersForMario.remove(orderToRemove);
+        ordersForMario.remove(orderToRemove); // sletter ordreren fra ArrayListen.
         System.out.println("Order has been removed");
     }
 
